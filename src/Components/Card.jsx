@@ -9,16 +9,14 @@ const Card = ({data}) => {
   const addFav = () => {
     if (!findCart) {
       dispatch({ type: 'ADD_FAV', payload: data });
-      alert(`¡Dentista N° ${data.id} añadido a sus favoritos!`);
+      alert(`¡Dentista N° ${data.id} añadida a sus favoritos!`);
     } else {
-      alert("Ya es favorito");
+      alert("Ya está en favoritos");
     }
 };
 
   return (
     <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
       <Link to={"/dentist/" + data.id}>
         <img width="300" src="/images/doctor.jpg" alt="Imagen Doctor"/>
         <h3>{data.name}</h3>

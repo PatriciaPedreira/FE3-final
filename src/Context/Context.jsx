@@ -14,7 +14,6 @@ const initialState = {
 };
 
 const Context = ({ children }) => {
-    //Agregamos todos los estados globales
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
@@ -25,7 +24,7 @@ const Context = ({ children }) => {
             .catch(error => console.error(error));
     }, []);
 
-    // Guardar los favoritos en localStorage cada vez que state.fav cambie
+    // Guarda los favoritos en localStorage cada vez que state.fav cambia
     useEffect(() => {
         localStorage.setItem("favs", JSON.stringify(state.fav));
     }, [state.fav]);
